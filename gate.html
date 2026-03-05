@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odelia & Donggyu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        .gate-page {
+            margin: 0;
+            padding: 0;
+            background-image: url('images/code_p.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .gate-container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 640px;
+            width: 100%;
+        }
+        .gate-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-style: italic;
+            color: #1a1a1a;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+        .gate-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: #3a3a3a;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+        .gate-notice {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: #4a4a4a;
+            background: transparent;
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .gate-notice span {
+            font-weight: bold;
+        }
+        .gate-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .gate-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 12px 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            text-align: center;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+            border-radius: 0;
+            outline: none;
+            color: #1a1a1a;
+        }
+        .gate-input:focus {
+            border-bottom-color: #4a6a63;
+        }
+        .gate-input::placeholder {
+            letter-spacing: 2px;
+            color: #555;
+        }
+        .gate-btn {
+            position: relative;
+            z-index: 0;
+            padding: 12px 40px;
+            background: transparent;
+            color: #1a1a1a;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: heartbeat 1.5s ease-in-out 5s infinite;
+        }
+        .gate-btn:hover {
+            transform: translateY(-2px);
+        }
+        .gate-error {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem;
+            color: #8b2020;
+            display: none;
+        }
+        @media (max-width: 600px) {
+            .gate-title { font-size: 1.6rem; }
+            .gate-input { max-width: 100%; }
+        }
+    </style>
+</head>
+<body class="gate-page">
+    <div class="gate-container">
+        <h1 class="gate-title">Odelia & Donggyu</h1>
+        <p class="gate-subtitle">May 16, 2026 &nbsp;·&nbsp; Temecula</p>
+
+        <div class="gate-notice">
+            <span>A note before you enter</span><br>
+            There will be audio playing right after you enter your code.<br>Turn your volume up, or put your earbuds in.
+        </div>
+
+        <div class="gate-form">
+            <input
+                type="text"
+                id="codeInput"
+                class="gate-input"
+                placeholder="enter your code"
+                autocomplete="off"
+                spellcheck="false"
+            >
+            <button class="gate-btn" onclick="checkCode()">Enter</button>
+            <p class="gate-error" id="errorMsg">That code doesn't seem right. Try again.</p>
+        </div>
+    </div>
+
+    <script>
+        // Add your guest codes here
+        const validCodes = [
+            "ODELIA2026",
+            "DONGGYU2026",
+            "WEDDING2026"
+        ];
+
+        function checkCode() {
+            // CODE LOCK DISABLED DURING DEVELOPMENT — re-enable before launch
+            window.location.href = 'story.html';
+
+            /* ORIGINAL VALIDATION — uncomment when ready to launch:
+            const input = document.getElementById('codeInput').value.trim().toUpperCase();
+            const error = document.getElementById('errorMsg');
+
+            if (validCodes.includes(input)) {
+                window.location.href = 'story.html';
+            } else {
+                error.style.display = 'block';
+                document.getElementById('codeInput').value = '';
+                document.getElementById('codeInput').focus();
+            }
+            */
+        }
+
+        // Allow pressing Enter key to submit
+        document.getElementById('codeInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') checkCode();
+        });
+    </script>
+</body>
+</html>

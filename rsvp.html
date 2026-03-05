@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP - Odelia & Donggyu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        .rsvp-page {
+            margin: 0;
+            padding: 0;
+            background-color: #e8dcc8;
+            background-image: url('images/letterbk.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .rsvp-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 2rem;
+            overflow: hidden;
+        }
+        .rsvp-frame {
+            width: 100%;
+            max-width: 1000px;
+            flex: 1;
+            min-height: 0;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        .rsvp-nav {
+            margin-top: 1rem;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+        .rsvp-nav a {
+            display: inline-block;
+            position: relative;
+            z-index: 0;
+            padding: 7px 18px;
+            text-decoration: none;
+            border: none;
+            background: transparent;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #3a3a3a;
+            transition: all 0.3s ease;
+            animation: heartbeat 1.5s ease-in-out 5s infinite;
+        }
+        .rsvp-back-small {
+            font-size: 0.975rem !important;
+        }
+        .rsvp-back:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 1000px) {
+            .rsvp-container {
+                padding: 0.5rem;
+            }
+            .rsvp-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body class="rsvp-page">
+    <div class="rsvp-container">
+
+        <iframe
+            class="rsvp-frame"
+            src="https://tally.so/r/jaBKYQ"
+            width="1000"
+            height="800"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0">
+            Loading…
+        </iframe>
+
+        <nav class="rsvp-nav">
+            <a href="javascript:history.back()" class="rsvp-back rsvp-back-small">Back</a>
+            <a href="menu.html" class="rsvp-back">Directories</a>
+        </nav>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

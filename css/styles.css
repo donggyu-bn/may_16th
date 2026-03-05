@@ -1,0 +1,1016 @@
+/* ===========================================
+   MAGRITTE-THEMED WEDDING WEBSITE
+   Odelia & Donggyu - May 16, 2026
+   Inspired by René Magritte's surrealist paintings
+   =========================================== */
+
+/* --- RESET & BASE --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- HEARTBEAT ANIMATION --- */
+@keyframes heartbeat {
+    0%   { scale: 1; }
+    8%   { scale: 1.08; }
+    16%  { scale: 1; }
+    24%  { scale: 1.05; }
+    32%  { scale: 1; }
+    100% { scale: 1; }
+}
+
+/* --- TYPOGRAPHY --- */
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* --- DEFAULT BODY (for inner pages) --- */
+body {
+    font-family: 'Playfair Display', Georgia, serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #e8dcc8;
+    color: #2b2a2a;
+}
+
+/* ===========================================
+   MAGRITTE HOME PAGE - AUTHENTIC STYLE
+   =========================================== */
+
+.magritte-home {
+    margin: 0;
+    padding: 0;
+    /* Custom Magritte background image */
+    background-image: url('../images/background home.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;
+    color: #1a1a1a;
+    position: relative;
+}
+
+/* --- FRAME OVERLAY --- */
+.frame-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.frame-image {
+    width: 123%;
+    height: 123%;
+    object-fit: fill;
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* --- MAGRITTE CLOUDS - Hidden when using background image --- */
+.cloud-layer {
+    display: none; /* Hidden - using background image instead */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Individual cloud shapes */
+.cloud {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+/* Cloud 1 - Large left cloud */
+.cloud-1 {
+    width: 300px;
+    height: 100px;
+    top: 8%;
+    left: 5%;
+    background: #ffffff;
+    border-radius: 100px;
+    box-shadow:
+        90px -40px 0 -10px #ffffff,
+        130px -20px 0 10px #ffffff,
+        170px -40px 0 -5px #ffffff,
+        40px -30px 0 5px #ffffff,
+        -20px -15px 0 -5px #ffffff,
+        200px -10px 0 -10px #ffffff;
+}
+
+/* Cloud 2 - Right side */
+.cloud-2 {
+    width: 250px;
+    height: 80px;
+    top: 15%;
+    right: 10%;
+    background: #ffffff;
+    border-radius: 100px;
+    box-shadow:
+        70px -35px 0 -5px #ffffff,
+        110px -15px 0 10px #ffffff,
+        150px -30px 0 0px #ffffff,
+        30px -25px 0 5px #ffffff;
+}
+
+/* Cloud 3 - Center top */
+.cloud-3 {
+    width: 200px;
+    height: 70px;
+    top: 5%;
+    left: 40%;
+    background: #ffffff;
+    border-radius: 100px;
+    box-shadow:
+        60px -30px 0 0px #ffffff,
+        100px -15px 0 5px #ffffff,
+        25px -20px 0 5px #ffffff;
+}
+
+/* Cloud 4 - Lower left */
+.cloud-4 {
+    width: 280px;
+    height: 90px;
+    top: 25%;
+    left: 15%;
+    background: #f8f8f8;
+    border-radius: 100px;
+    box-shadow:
+        80px -35px 0 -5px #f8f8f8,
+        120px -20px 0 10px #f8f8f8,
+        160px -35px 0 0px #f8f8f8,
+        35px -28px 0 5px #f8f8f8;
+    opacity: 0.9;
+}
+
+/* Cloud 5 - Lower right */
+.cloud-5 {
+    width: 320px;
+    height: 100px;
+    top: 30%;
+    right: 5%;
+    background: #f5f5f5;
+    border-radius: 100px;
+    box-shadow:
+        100px -45px 0 -10px #f5f5f5,
+        150px -25px 0 15px #f5f5f5,
+        200px -40px 0 -5px #f5f5f5,
+        50px -35px 0 5px #f5f5f5;
+    opacity: 0.85;
+}
+
+/* --- MAIN CANVAS LAYOUT --- */
+.canvas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 10;
+    padding: 2rem;
+    gap: 1rem;
+    text-align: center;
+}
+
+/* --- LEFT SECTION --- */
+.left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- RIGHT SECTION --- */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- COUPLE SECTION (legacy) --- */
+.couple-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.couple-link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.couple-link:hover {
+    transform: scale(1.02);
+}
+
+.couple-link:hover .couple-image {
+    filter: brightness(1.05);
+}
+
+.couple-link:hover .couple-text {
+    opacity: 1;
+}
+
+.couple-text {
+    display: none; /* Hidden - couple image is clickable without text */
+}
+
+.couple-label {
+    position: absolute;
+    top: 75%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: #9bb3c4;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow:
+        1px 1px 0 rgba(255, 255, 255, 0.5),
+        2px 2px 3px rgba(255, 255, 255, 0.3);
+    animation: heartbeat 1.5s ease-in-out 5s infinite;
+}
+
+.couple-image {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+/* --- COUPLE PAGE (Meet Us) --- */
+.couple-page {
+    max-width: 800px;
+}
+
+.person-section {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.person-section h2 {
+    margin-bottom: 15px;
+}
+
+.date-text {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+}
+
+/* --- TITLE TEXT --- */
+.title-text {
+    font-size: 3rem;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #1a1a1a;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+/* --- NAVIGATION BUTTONS --- */
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: scale(1.05);
+}
+
+.nav-link:hover .nav-image {
+    filter: brightness(1.1);
+}
+
+.nav-image {
+    width: 100%;
+    max-width: 130px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.nav-text {
+    margin-top: 0;
+    font-size: 1.0rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* --- INFO BOX --- */
+.info-box {
+    background-color: rgba(245, 240, 230, 0.9);
+    padding: 20px 25px;
+    margin-top: 20px;
+    max-width: 280px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+}
+
+.info-box p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #2a2a2a;
+    margin: 0;
+}
+
+/* --- WINDOW SECTION --- */
+.window-section {
+    margin-top: 30px;
+}
+
+.window-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.nav-btn {
+    padding: 12px 28px;
+    background: transparent;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* --- PARADOX TEXT (outside frame) --- */
+.paradox-text {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    font-style: italic;
+    color: #2a2a2a;
+    white-space: nowrap;
+    letter-spacing: 1px;
+}
+
+/* ===========================================
+   INNER PAGES STYLES (shared)
+   =========================================== */
+
+/* Style all sections */
+section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #aec4c2;
+    border-radius: 10px;
+}
+
+/* Hero header */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #4a6a63;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4a6a63;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Main content area for pages */
+main {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #aec4c2;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Home page styling */
+.home {
+    padding: 80px 40px;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Next button styling */
+.next-button {
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    margin-top: 30px;
+    padding: 15px 40px;
+    background: transparent;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    animation: heartbeat 1.5s ease-in-out 5s infinite;
+}
+
+.next-button:hover {
+    transform: translateY(-2px);
+}
+
+/* ===========================================
+   MENU PAGE
+   =========================================== */
+
+.menu-page {
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/the_venue.png');
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.menu-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    margin-left: 2.15rem;
+    margin-bottom: 3.1rem;
+}
+
+.menu-content {
+    text-align: center;
+}
+
+.menu-coming-soon {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #000000
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+}
+
+.menu-date {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #000000;
+    letter-spacing: 3px;
+    margin-bottom: 40rem;
+}
+
+.menu-title {
+    position: absolute;
+    top: 20%;
+    left: calc(50% + 3.5rem);
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.menu-link {
+    display: inline-block;
+    padding: 12px 28px;
+    background: transparent;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8), -1px -1px 3px rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    font-size: 1.1rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.menu-link:hover {
+    transform: translateY(-2px);
+}
+
+/* ===========================================
+   MEET US PAGES (Odelia & Donggyu)
+   =========================================== */
+
+.details-person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 280px;
+}
+
+.meetus-page {
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/background home.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.meetus-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 3rem;
+    gap: 2rem;
+}
+
+/* --- Photo Layout --- */
+.photo-wrapper {
+    position: absolute;
+    top: 8%;
+    left: 8%;
+    width: 50%;
+    height: 55%;
+}
+
+.meetus-photo {
+    position: absolute;
+    width: 40%;
+    max-width: 280px;
+    height: auto;
+    border: 6px solid #fff;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.photo-1 {
+    top: 0;
+    left: 0;
+    transform: rotate(-5deg);
+    z-index: 1;
+    max-height: 340px;
+}
+
+.photo-2 {
+    top: -5%;
+    left: 55%;
+    transform: rotate(3deg);
+    z-index: 2;
+    max-height: 340px;
+}
+
+/* --- Title & Subtitle --- */
+.meetus-title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 4.5rem;
+    color: #1a1a1a;
+    margin: 0;
+    text-align: left;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.meetus-subtitle {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.3rem;
+    color: #1a1a1a;
+    position: absolute;
+    right: 35%;
+    bottom: 55%;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* --- Navigation Links --- */
+.meetus-home,
+.meetus-next,
+.meetus-back {
+    position: absolute;
+    bottom: 3rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 8px 20px;
+    background: transparent;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.meetus-back {
+    font-size: 1.05rem;
+}
+
+.meetus-home {
+    left: 3rem;
+}
+
+.meetus-next {
+    right: 3rem;
+}
+
+.meetus-back {
+    left: 3rem;
+}
+
+.meetus-home:hover,
+.meetus-next:hover,
+.meetus-back:hover {
+    transform: translateY(-2px);
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+/* --- Tablet / Small Desktop (max 900px) --- */
+@media (max-width: 900px) {
+    /* Home page */
+    .title-text {
+        font-size: 2rem;
+    }
+
+    .couple-label {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+
+    .nav-buttons {
+        gap: 15px;
+    }
+
+    .couple-image {
+        max-width: 350px;
+    }
+
+    .nav-image {
+        max-width: 100px;
+    }
+
+    .info-box {
+        max-width: 100%;
+    }
+
+    .window-image {
+        max-width: 250px;
+    }
+
+    /* Meet Us pages */
+    .meetus-container {
+        padding: 2rem;
+    }
+
+    .photo-wrapper {
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 45%;
+    }
+
+    .meetus-photo {
+        width: 35%;
+        max-width: 220px;
+    }
+
+    .photo-1 {
+        max-height: 250px;
+    }
+
+    .photo-2 {
+        left: 50%;
+        max-height: 250px;
+    }
+
+    .meetus-title {
+        font-size: 2.8rem;
+    }
+
+    .meetus-subtitle {
+        right: 10%;
+        bottom: 50%;
+        font-size: 1rem;
+    }
+
+    .meetus-home,
+    .meetus-next,
+    .meetus-back {
+        font-size: 0.9rem;
+        bottom: 2rem;
+        padding: 6px 14px;
+    }
+
+    .meetus-home,
+    .meetus-back {
+        left: 2rem;
+    }
+
+    .meetus-next {
+        right: 2rem;
+    }
+
+    /* Inner pages */
+    main {
+        margin: 20px auto;
+        padding: 25px;
+        width: 90%;
+    }
+
+    section {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    /* Menu page */
+    .menu-title {
+        font-size: 2rem;
+    }
+}
+
+/* --- Mobile (max 600px) --- */
+@media (max-width: 600px) {
+    /* Home page */
+    .canvas {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .frame-image {
+        width: 140%;
+        height: 140%;
+    }
+
+    .couple-image {
+        max-width: 250px;
+    }
+
+    .couple-label {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+    }
+
+    .title-text {
+        font-size: 1.5rem;
+        margin-left: 0;
+    }
+
+    .nav-buttons {
+        gap: 10px;
+    }
+
+    .nav-image {
+        max-width: 70px;
+    }
+
+    .nav-text {
+        font-size: 0.75rem;
+    }
+
+    /* Meet Us pages */
+    .meetus-container {
+        padding: 1.5rem;
+        justify-content: flex-start;
+        padding-top: 60%;
+    }
+
+    .photo-wrapper {
+        top: 3%;
+        left: 5%;
+        width: 90%;
+        height: 40%;
+    }
+
+    .meetus-photo {
+        width: 42%;
+        max-width: 160px;
+        border-width: 4px;
+    }
+
+    .photo-1 {
+        max-height: 180px;
+        transform: rotate(-3deg);
+    }
+
+    .photo-2 {
+        left: 50%;
+        max-height: 180px;
+        transform: rotate(2deg);
+    }
+
+    .meetus-title {
+        font-size: 2.2rem;
+    }
+
+    .meetus-subtitle {
+        position: static;
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .meetus-home,
+    .meetus-next,
+    .meetus-back {
+        font-size: 0.8rem;
+        bottom: 1.5rem;
+        padding: 5px 12px;
+    }
+
+    .meetus-home,
+    .meetus-back {
+        left: 1.5rem;
+    }
+
+    .meetus-next {
+        right: 1.5rem;
+    }
+
+    /* Inner pages */
+    main {
+        margin: 10px auto;
+        padding: 20px 15px;
+        width: 95%;
+    }
+
+    main h1 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .next-button {
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+
+    /* Menu page */
+    .menu-container {
+        padding: 1.5rem;
+    }
+
+    .menu-title {
+        font-size: 1.8rem;
+    }
+
+    .menu-link {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* --- Small phones (max 400px) --- */
+@media (max-width: 400px) {
+    .couple-image {
+        max-width: 200px;
+    }
+
+    .couple-label {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
+    .title-text {
+        font-size: 1.2rem;
+    }
+
+    .nav-buttons {
+        gap: 8px;
+    }
+
+    .nav-image {
+        max-width: 55px;
+    }
+
+    .nav-text {
+        font-size: 0.65rem;
+    }
+
+    .meetus-title {
+        font-size: 1.8rem;
+    }
+
+    .meetus-photo {
+        width: 40%;
+        max-width: 130px;
+    }
+
+    .photo-1 {
+        max-height: 150px;
+    }
+
+    .photo-2 {
+        max-height: 150px;
+    }
+}

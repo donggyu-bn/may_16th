@@ -69,6 +69,32 @@
             gap: 3rem;
             align-items: center;
         }
+        .lang-toggle {
+            position: fixed;
+            top: 1.2rem;
+            right: 1.5rem;
+            display: flex;
+            gap: 0.4rem;
+            z-index: 1000;
+        }
+        .lang-btn {
+            background: transparent;
+            border: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #3a3a3a;
+            cursor: pointer;
+            padding: 4px 8px;
+            opacity: 0.5;
+            transition: opacity 0.2s ease;
+        }
+        .lang-btn.active {
+            opacity: 1;
+            border-bottom: 1.5px solid #3a3a3a;
+        }
+        .lang-btn:hover { opacity: 1; }
         @media (max-width: 600px) {
             .video-wrapper {
                 width: 98vw;
@@ -81,6 +107,11 @@
 </head>
 <body>
 
+    <div class="lang-toggle">
+        <button class="lang-btn" id="btnEN" onclick="setLang('en')">🇺🇸 EN</button>
+        <button class="lang-btn" id="btnKR" onclick="setLang('kr')">🇰🇷 한국어</button>
+    </div>
+
     <div class="video-wrapper">
         <video id="storyVideo" autoplay playsinline>
             <source src="images/final_vid.mp4" type="video/mp4">
@@ -88,9 +119,10 @@
     </div>
 
     <div class="story-nav">
-        <a href="letter.html" class="next-btn">Next</a>
+        <a href="letter.html" class="next-btn" data-lang-key="story-next">Next</a>
     </div>
 
+    <script src="js/lang.js"></script>
     <script>
         document.getElementById('storyVideo').addEventListener('ended', function () {
             window.location.href = 'letter.html';

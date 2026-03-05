@@ -500,6 +500,42 @@ main {
 }
 
 /* ===========================================
+   LANGUAGE TOGGLE
+   =========================================== */
+
+.lang-toggle {
+    position: fixed;
+    top: 1.2rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 0.4rem;
+    z-index: 1000;
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #3a3a3a;
+    cursor: pointer;
+    padding: 4px 8px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+}
+
+.lang-btn.active {
+    opacity: 1;
+    border-bottom: 1.5px solid #3a3a3a;
+}
+
+.lang-btn:hover {
+    opacity: 1;
+}
+
+/* ===========================================
    MENU PAGE
    =========================================== */
 
@@ -507,7 +543,7 @@ main {
     margin: 0;
     padding: 0;
     background-image: url('../images/the_venue.png');
-    background-size: auto;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -536,7 +572,7 @@ main {
     font-size: 1.5rem;
     font-weight: 700;
     font-style: italic;
-    color: #000000
+    color: #000000;
     letter-spacing: 3px;
     margin-bottom: 0.5rem;
 }
@@ -548,7 +584,7 @@ main {
     font-style: italic;
     color: #000000;
     letter-spacing: 3px;
-    margin-bottom: 40rem;
+    margin-bottom: 2rem;
 }
 
 .menu-title {
@@ -830,6 +866,16 @@ main {
     }
 }
 
+/* --- Tablet (max 768px) — iOS background-attachment fix --- */
+@media (max-width: 768px) {
+    .magritte-home {
+        background-attachment: scroll;
+    }
+    .menu-page {
+        background-attachment: scroll;
+    }
+}
+
 /* --- Mobile (max 600px) --- */
 @media (max-width: 600px) {
     /* Home page */
@@ -958,10 +1004,21 @@ main {
     /* Menu page */
     .menu-container {
         padding: 1.5rem;
+        margin-left: 0;
+        margin-bottom: 0;
     }
 
     .menu-title {
         font-size: 1.8rem;
+    }
+
+    .menu-coming-soon {
+        font-size: 1.1rem;
+    }
+
+    .menu-date {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .menu-link {

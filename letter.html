@@ -85,6 +85,9 @@
         .letter-back:hover {
             transform: translateY(-2px);
         }
+        @media (max-width: 768px) {
+            body { background-attachment: scroll; }
+        }
         @media (max-width: 600px) {
             .letter-buttons {
                 flex-direction: column;
@@ -97,12 +100,18 @@
     </style>
 </head>
 <body>
-    <img src="images/letter_f.png" alt="Letter to Our Guests" class="letter-image">
-    <div class="letter-buttons">
-        <a href="story.html" class="letter-back">Back</a>
-        <a href="rsvp.html" class="letter-next">Will you join us?</a>
+    <div class="lang-toggle">
+        <button class="lang-btn" id="btnEN" onclick="setLang('en')">🇺🇸 EN</button>
+        <button class="lang-btn" id="btnKR" onclick="setLang('kr')">🇰🇷 한국어</button>
     </div>
 
+    <img src="images/letter_f.png" alt="Letter to Our Guests" class="letter-image">
+    <div class="letter-buttons">
+        <a href="story.html" class="letter-back" data-lang-key="letter-back">Back</a>
+        <a href="rsvp.html" class="letter-next" data-lang-key="letter-next">Will you join us?</a>
+    </div>
+
+    <script src="js/lang.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

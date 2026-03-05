@@ -19,6 +19,9 @@
             height: 100vh;
             overflow: hidden;
         }
+        @media (max-width: 768px) {
+            .rsvp-page { background-attachment: scroll; }
+        }
         .rsvp-container {
             height: 100vh;
             display: flex;
@@ -79,13 +82,16 @@
     </style>
 </head>
 <body class="rsvp-page">
+    <div class="lang-toggle">
+        <button class="lang-btn" id="btnEN" onclick="setLang('en')">🇺🇸 EN</button>
+        <button class="lang-btn" id="btnKR" onclick="setLang('kr')">🇰🇷 한국어</button>
+    </div>
+
     <div class="rsvp-container">
 
         <iframe
             class="rsvp-frame"
             src="https://tally.so/r/jaBKYQ"
-            width="1000"
-            height="800"
             frameborder="0"
             marginheight="0"
             marginwidth="0">
@@ -93,11 +99,12 @@
         </iframe>
 
         <nav class="rsvp-nav">
-            <a href="javascript:history.back()" class="rsvp-back rsvp-back-small">Back</a>
-            <a href="menu.html" class="rsvp-back">Directories</a>
+            <a href="javascript:history.back()" class="rsvp-back rsvp-back-small" data-lang-key="rsvp-back">Back</a>
+            <a href="menu.html" class="rsvp-back" data-lang-key="rsvp-directories">Directories</a>
         </nav>
     </div>
 
+    <script src="js/lang.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

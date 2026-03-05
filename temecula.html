@@ -63,6 +63,32 @@
         .temecula-nav a:hover {
             transform: translateY(-2px);
         }
+        .lang-toggle {
+            position: fixed;
+            top: 1.2rem;
+            right: 1.5rem;
+            display: flex;
+            gap: 0.4rem;
+            z-index: 1000;
+        }
+        .lang-btn {
+            background: transparent;
+            border: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #3a3a3a;
+            cursor: pointer;
+            padding: 4px 8px;
+            opacity: 0.5;
+            transition: opacity 0.2s ease;
+        }
+        .lang-btn.active {
+            opacity: 1;
+            border-bottom: 1.5px solid #3a3a3a;
+        }
+        .lang-btn:hover { opacity: 1; }
         @media (max-width: 1000px) {
             body { padding: 0.5rem; }
             .temecula-nav { flex-direction: column; align-items: center; }
@@ -70,6 +96,11 @@
     </style>
 </head>
 <body>
+    <div class="lang-toggle">
+        <button class="lang-btn" id="btnEN" onclick="setLang('en')">🇺🇸 EN</button>
+        <button class="lang-btn" id="btnKR" onclick="setLang('kr')">🇰🇷 한국어</button>
+    </div>
+
     <iframe
         class="temecula-frame"
         src="https://www.visittemeculavalley.com/"
@@ -78,7 +109,9 @@
     </iframe>
 
     <nav class="temecula-nav">
-        <a href="menu.html" class="nav-back">Directories</a>
+        <a href="menu.html" class="nav-back" data-lang-key="tem-directories">Directories</a>
     </nav>
+
+    <script src="js/lang.js"></script>
 </body>
 </html>

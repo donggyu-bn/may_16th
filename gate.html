@@ -109,6 +109,9 @@
             color: #8b2020;
             display: none;
         }
+        @media (max-width: 768px) {
+            .gate-page { background-attachment: scroll; }
+        }
         @media (max-width: 600px) {
             .gate-title { font-size: 1.6rem; }
             .gate-input { max-width: 100%; }
@@ -116,13 +119,20 @@
     </style>
 </head>
 <body class="gate-page">
+
+    <div class="lang-toggle">
+        <button class="lang-btn" id="btnEN" onclick="setLang('en')">🇺🇸 EN</button>
+        <button class="lang-btn" id="btnKR" onclick="setLang('kr')">🇰🇷 한국어</button>
+    </div>
+
     <div class="gate-container">
         <h1 class="gate-title">Odelia & Donggyu</h1>
-        <p class="gate-subtitle">May 16, 2026 &nbsp;·&nbsp; Temecula</p>
+        <p class="gate-subtitle" data-lang-html="gate-subtitle">May 16, 2026 &nbsp;·&nbsp; Temecula</p>
 
         <div class="gate-notice">
-            <span>A note before you enter</span><br>
-            There will be audio playing right after you enter your code.<br>Turn your volume up, or put your earbuds in.
+            <span data-lang-key="gate-notice-title">A note before you enter</span><br>
+            <span data-lang-key="gate-notice-1">There will be audio playing right after you enter your code.</span><br>
+            <span data-lang-key="gate-notice-2">Turn your volume up, or put your earbuds in.</span>
         </div>
 
         <div class="gate-form">
@@ -131,14 +141,16 @@
                 id="codeInput"
                 class="gate-input"
                 placeholder="enter your code"
+                data-lang-placeholder="gate-placeholder"
                 autocomplete="off"
                 spellcheck="false"
             >
-            <button class="gate-btn" onclick="checkCode()">Enter</button>
-            <p class="gate-error" id="errorMsg">That code doesn't seem right. Try again.</p>
+            <button class="gate-btn" data-lang-key="gate-btn" onclick="checkCode()">Enter</button>
+            <p class="gate-error" id="errorMsg" data-lang-key="gate-error">That code doesn't seem right. Try again.</p>
         </div>
     </div>
 
+    <script src="js/lang.js"></script>
     <script>
         // Add your guest codes here
         const validCodes = [

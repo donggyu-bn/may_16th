@@ -8,19 +8,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body class="menu-page">
+
+    <div class="lang-toggle">
+        <button class="lang-btn" id="btnEN" onclick="setLang('en')">🇺🇸 EN</button>
+        <button class="lang-btn" id="btnKR" onclick="setLang('kr')">🇰🇷 한국어</button>
+    </div>
+
     <div class="menu-container">
         <div class="menu-content">
-            <h2 class="menu-coming-soon">Coming Soon</h2>
-            <h2 class="menu-date">May 16th</h2>
+            <h2 class="menu-coming-soon" data-lang-key="menu-coming-soon">Coming Soon</h2>
+            <h2 class="menu-date" data-lang-key="menu-date">May 16th</h2>
             <div class="menu-options">
-                <a href="rsvp.html" class="menu-link">RSVP</a>
-                <a href="temecula.html" class="menu-link">Temecula</a>
-                <a href="index.html"
-                class="menu-link">Restart</a>
+                <a href="rsvp.html" class="menu-link" data-lang-key="menu-rsvp">RSVP</a>
+                <a href="temecula.html" class="menu-link" data-lang-key="menu-temecula">Temecula</a>
+                <a href="index.html" class="menu-link" data-lang-key="menu-restart">Restart</a>
             </div>
         </div>
     </div>
 
+    <script src="js/lang.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

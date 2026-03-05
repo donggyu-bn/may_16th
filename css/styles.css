@@ -242,10 +242,10 @@ body {
     top: 75%;
     left: 30%;
     transform: translate(-50%, -50%);
-    font-size: 2.8rem;
+    font-size: clamp(1.2rem, 4.5vw, 2.8rem);
     font-weight: 400;
     color: #9bb3c4;
-    letter-spacing: 8px;
+    letter-spacing: clamp(2px, 0.8vw, 8px);
     text-transform: uppercase;
     text-align: center;
     text-shadow:
@@ -255,8 +255,7 @@ body {
 }
 
 .couple-image {
-    max-width: 1000px;
-    width: 100%;
+    width: clamp(220px, 50vw, 900px);
     height: auto;
     cursor: pointer;
     transition: filter 0.3s ease;
@@ -770,17 +769,8 @@ main {
         font-size: 2rem;
     }
 
-    .couple-label {
-        font-size: 2rem;
-        letter-spacing: 4px;
-    }
-
     .nav-buttons {
         gap: 15px;
-    }
-
-    .couple-image {
-        max-width: 350px;
     }
 
     .nav-image {
@@ -886,15 +876,6 @@ main {
     .frame-image {
         width: 140%;
         height: 140%;
-    }
-
-    .couple-image {
-        max-width: 250px;
-    }
-
-    .couple-label {
-        font-size: 1.5rem;
-        letter-spacing: 3px;
     }
 
     .title-text {
@@ -1029,15 +1010,6 @@ main {
 
 /* --- Small phones (max 400px) --- */
 @media (max-width: 400px) {
-    .couple-image {
-        max-width: 200px;
-    }
-
-    .couple-label {
-        font-size: 1.2rem;
-        letter-spacing: 2px;
-    }
-
     .title-text {
         font-size: 1.2rem;
     }

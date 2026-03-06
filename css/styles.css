@@ -531,7 +531,6 @@ main {
 
 .lang-btn.active {
     opacity: 1;
-    border-bottom: 1.5px solid #3a3a3a;
 }
 
 .lang-btn:hover {
@@ -880,6 +879,11 @@ main {
     .title-text {
         font-size: 1.5rem;
         margin-left: 0;
+    }
+
+    .couple-label {
+        font-size: 1.4rem;
+        letter-spacing: 3px;
     }
 
     .nav-buttons {

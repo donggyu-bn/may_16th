@@ -16,6 +16,11 @@
             height: 100%;
             overflow: hidden;
             background-color: #e8dcc8;
+            background-image: url('images/bg_misc.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -113,7 +118,7 @@
     </div>
 
     <div class="video-wrapper">
-        <video id="storyVideo" autoplay playsinline>
+        <video id="storyVideo" autoplay playsinline controls>
             <source src="images/final_vid.mp4" type="video/mp4">
         </video>
     </div>

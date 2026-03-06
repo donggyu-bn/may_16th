@@ -69,6 +69,11 @@
             if (t[key] !== undefined) el.placeholder = t[key];
         });
 
+        // Show/hide language sections
+        document.querySelectorAll('[data-lang-show]').forEach(function(el) {
+            el.style.display = el.dataset.langShow === lang ? '' : 'none';
+        });
+
         // Toggle button active state
         var btnEN = document.getElementById('btnEN');
         var btnKR = document.getElementById('btnKR');

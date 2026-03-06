@@ -240,28 +240,37 @@ body {
 }
 
 .couple-label {
-    margin-top: calc(clamp(-8.8rem, -9.8vw, 0px) + 0.3rem);
-    margin-left: clamp(-12.7rem, -14.1vw, 0px);
-    margin-bottom: 1rem;
-    font-size: clamp(0.85rem, 3.1vw, 2.8rem);
+    margin-top: -1.2rem;
+    margin-bottom: 0.3rem;
+    padding: 8px 24px;
+    font-size: clamp(0.9rem, 1.6vw, 1.5rem);
     font-weight: 400;
-    color: #9bb3c4;
+    color: #b6bfc5;
     letter-spacing: clamp(2px, 0.55vw, 8px);
     text-transform: uppercase;
     text-align: center;
-    text-shadow:
-        1px 1px 0 rgba(255, 255, 255, 0.5),
-        2px 2px 3px rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    text-shadow: 2px 3px 6px rgba(49, 49, 49, 0.898);
+    -webkit-text-stroke: 0.5px rgba(206, 206, 206, 0.434);
+    background: transparent;
+    border: none;
+    box-shadow: none;
     animation: heartbeat 1.5s ease-in-out 5s infinite;
     white-space: nowrap;
+    transition: transform 0.3s ease;
+}
+
+.couple-label:hover {
+    transform: translateY(-2px);
 }
 
 .couple-image {
-    width: clamp(220px, 50vw, 900px);
-    margin-left: clamp(0px, 8.9vw, 8rem);
-    margin-top: 1rem;
+    width: clamp(250px, 38vw, 620px);
+    margin-top: 0;
     height: auto;
-    cursor: pointer;
+    display: block;
+    margin-left: 11.5rem;
+    margin-right: auto;
     transition: filter 0.3s ease;
 }
 
@@ -291,10 +300,10 @@ body {
 
 /* --- TITLE TEXT --- */
 .title-text {
-    font-size: 3rem;
-    margin-top: calc(10px + 2rem);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-top: 0.3rem;
     text-align: center;
-    font-weight: 700;
+    font-weight: 1000;
     letter-spacing: 3px;
     color: #1a1a1a;
     font-style: italic;
@@ -607,7 +616,7 @@ main {
     padding: 12px 28px;
     background: transparent;
     color: #000000;
-    text-shadow: 2px 3px 0px rgba(150, 150, 150, 0.6);
+    text-shadow: 2px 3px 0px rgba(165, 165, 165, 0.78);
     text-decoration: none;
     font-weight: bold;
     border: none;
@@ -881,6 +890,10 @@ main {
         margin-left: 0;
     }
 
+    .couple-image {
+        width: 90vw;
+    }
+
     .couple-label {
         font-size: 1.4rem;
         letter-spacing: 3px;
@@ -1045,4 +1058,85 @@ main {
     .photo-2 {
         max-height: 150px;
     }
+}
+
+.letter-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    background: transparent;
+    box-shadow: 0 0 40px 10px rgba(180, 180, 180, 0.35);
+    border-radius: 4px;
+}
+
+.letter-section-kr {
+    font-family: 'Noto Serif KR', serif;
+}
+
+.greeting {
+    text-align: left;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.greeting::after {
+    content: '';
+    display: block;
+    width: 40%;
+    margin-top: 16px;
+    border-bottom: 1px solid rgba(180, 180, 180, 0.45);
+}
+.letter-section-kr {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 60px 30px;
+    font-family: 'Noto Serif KR', serif;
+}
+
+.greeting {
+    text-align: left;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.letter-body {
+    text-align: center;
+}
+
+.letter-body p {
+    margin-bottom: 35px;
+    line-height: 2;
+}
+
+.letter-body strong {
+    font-weight: 600;
+}
+
+.signature {
+    text-align: left;
+    margin-top: 50px;
+}
+
+.signature .names {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.letter-body {
+    text-align: center;
+}
+
+.letter-body p {
+    margin-bottom: 35px;
+    line-height: 1.9;
+}
+
+.signature {
+    text-align: left;
+    margin-top: 50px;
+}
+
+.signature .names {
+    font-size: 1.3rem;
+    font-weight: 500;
 }

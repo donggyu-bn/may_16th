@@ -93,7 +93,8 @@
 
         <iframe
             class="rsvp-frame"
-            src="https://tally.so/r/jaBKYQ"
+            id="rsvpFrame"
+            src=""
             frameborder="0"
             marginheight="0"
             marginwidth="0">
@@ -108,5 +109,14 @@
 
     <script src="js/lang.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        var RSVP_URLS = {
+            odd:   'https://tally.so/r/PdE5aB',
+            even:  'https://tally.so/r/Y5OWNW',
+            prime: 'https://tally.so/r/Ek1Q9B',
+        };
+        var codeType = localStorage.getItem('wedding-code-type') || 'odd';
+        document.getElementById('rsvpFrame').src = RSVP_URLS[codeType] || RSVP_URLS.odd;
+    </script>
 </body>
 </html>
